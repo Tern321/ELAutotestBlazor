@@ -14,6 +14,8 @@
 }
 else
 {
+    <button class="btn btn-primary" @onclick="IncrementCount">Create Test</button>
+    <input @bind="InputValue" />
     <table class="table">
         <thead>
             <tr>
@@ -39,6 +41,11 @@ else
 
 @code {
     private WeatherForecast[]? forecasts;
+    string? InputValue { get; set; }
+    private void IncrementCount()
+    {
+        Console.WriteLine(InputValue);
+    }
 
     protected override async Task OnInitializedAsync()
     {
