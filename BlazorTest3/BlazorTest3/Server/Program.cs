@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.ResponseCompression;
+﻿
+using ELProxyClient;
+using Microsoft.AspNetCore.ResponseCompression;
+
+Model1.init();
 
 var builder = WebApplication.CreateBuilder(args);
 

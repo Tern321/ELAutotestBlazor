@@ -92,3 +92,4 @@
 /Users/evgeniiloshchenko/Documents/code/c_sharp/ELAutotestBlazor/BlazorTest3/BlazorTest3/Server/obj/Debug/net6.0/BlazorTest3.Server.pdb
 /Users/evgeniiloshchenko/Documents/code/c_sharp/ELAutotestBlazor/BlazorTest3/BlazorTest3/Server/obj/Debug/net6.0/BlazorTest3.Server.genruntimeconfig.cache
 /Users/evgeniiloshchenko/Documents/code/c_sharp/ELAutotestBlazor/BlazorTest3/BlazorTest3/Server/obj/Debug/net6.0/ref/BlazorTest3.Server.dll
+/Users/evgeniiloshchenko/Documents/code/c_sharp/ELAutotestBlazor/BlazorTest3/BlazorTest3/Server/bin/Debug/net6.0/Controllers/TestRunController.json

@@ -1,0 +1,101 @@
+﻿@page "/Test/{testName}"
+@using BlazorTest3.Shared
+@inject HttpClient Http
+
+<PageTitle>Test</PageTitle>
+
+<h1>Test</h1>
+list of devices
+
+list of test cases
+
+list of test runs + result
+
+
+create test case + device
+
+run test + device
+
+device:
+<select class="form-control" @onchange="@OnSelect" style="width:150px">
+    @foreach (var template in templates)
+    {
+        <option value=@template>@template</option>
+    }
+</select>
+
+<button class="btn btn-primary" @onclick="RunTest">Run test</button>
+<button class="btn btn-primary" @onclick="CreateTestCase">Create Test case</button>
+new test case name
+<input @bind="newTestCaseName" />
+
+test runs
+@*<NavLink class="nav-link" href="TestRun/1">
+        <span class="oi oi-plus" aria-hidden="true"></span> Test
+    </NavLink>*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Date</th>
+            <th>Device Id</th>
+            <th>Device type</th>
+            <th>Errors count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var testRun in testRuns)
+        {
+            <tr>
+
+                <td><button @onclick="@(e => openTestRun(e, @testRun.Id))">@testRun.Id</button></td>
+                <td>@testRun.Date</td>
+                <td>@testRun.DeviceId</td>
+                <td>@testRun.DeviceType</td>
+                <td>@testRun.Errorscount</td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public string testName { get; set; }
+
+    public string newTestCaseName { get; set; }
+
+    private ELTestRun[]? testRuns;
+
+    List<string> templates = new List<string>() { "America", "China", "India", "Russia", "England" };
+    string selectedString = "America";
+
+    private void openTestRun(MouseEventArgs e, string testRunId)
+    {
+
+    }
+    private void RunTest()
+    {
+
+    }
+
+    private void CreateTestCase()
+    {
+        Http.GetAsync("Test/CreateTestCase/" + testName);
+    }
+
+    void OnSelect(ChangeEventArgs e)
+    {
+        selectedString = e.Value.ToString();
+        Console.WriteLine("The selected country is : " + selectedString);
+        Console.WriteLine(testName);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        testRuns = new ELTestRun[0];
+        testRuns = await Http.GetFromJsonAsync<ELTestRun[]>("Test/TestRuns/" + testName);
+    }
+}

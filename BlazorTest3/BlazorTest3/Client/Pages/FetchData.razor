@@ -14,12 +14,16 @@
 }
 else
 {
+    <NavLink class="nav-link" href="Test/1">
+        <span class="oi oi-plus" aria-hidden="true"></span> Test
+    </NavLink>
+
     <button class="btn btn-primary" @onclick="IncrementCount">Create Test</button>
     <input @bind="InputValue" />
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
+                <th>name</th>
                 <th>Temp. (C)</th>
                 <th>Temp. (F)</th>
                 <th>Summary</th>
@@ -29,7 +33,7 @@ else
             @foreach (var forecast in forecasts)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.Name</td>
                     <td>@forecast.TemperatureC</td>
                     <td>@forecast.TemperatureF</td>
                     <td>@forecast.Summary</td>
@@ -40,16 +44,21 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private ELTest[]? forecasts;
     string? InputValue { get; set; }
-    private void IncrementCount()
+    private async void IncrementCount()
     {
-        Console.WriteLine(InputValue);
+        Console.WriteLine("createTest");
+
+        forecasts = await Http.GetFromJsonAsync<ELTest[]>("WeatherForecast/createTest/" + InputValue);
+        StateHasChanged();
+        @*forecasts = null;*@
+        @*forecasts = await Http.GetFromJsonAsync<ELTest[]>("createTest");*@
     }
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        forecasts = await Http.GetFromJsonAsync<ELTest[]>("WeatherForecast");
     }
 }
 
