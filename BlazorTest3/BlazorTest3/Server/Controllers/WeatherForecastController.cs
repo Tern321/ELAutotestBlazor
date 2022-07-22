@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BlazorTest3.Shared;
 using System.Text.RegularExpressions;
+using BlazorTest3.Server.Model;
 
 namespace BlazorTest3.Server.Controllers;
 
@@ -22,6 +23,7 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    
     [HttpGet("createTest/{testName}")]
     public IEnumerable<ELTest> createTest(string testName)
     {
@@ -29,8 +31,7 @@ public class WeatherForecastController : ControllerBase
         Console.WriteLine("createTest");
         // clean name
         // create folder
-        Regex rgx = new Regex("[^a-zA-Z0-9_ ]");
-        testName = rgx.Replace(testName, "").Replace(" ", "_");
+        testName = Util.cleanFileName(testName);
         if (testName.Length > 0 && testName.Length < 200)
         {
             Directory.CreateDirectory(baseTestsPath + testName);

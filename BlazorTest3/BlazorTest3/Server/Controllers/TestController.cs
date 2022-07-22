@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlazorTest3.Server.Model;
 using BlazorTest3.Shared;
 using Microsoft.AspNetCore.Mvc;
 //using BlazorTest3.Server.Model1;
@@ -20,7 +21,11 @@ namespace BlazorTest3.Server.Controllers
         public void CreateTestCase(string testName)
         {
             Console.WriteLine("CreateTestCase backend");
-            var manager = Model1.init();
+            var a = new TestScreenData();
+            a.testName = testName;
+            a.testCaseId = Util.unicFileName();
+            
+            Model1.messageManager.sendSharedMessage(a.ToJson(), "GetTestData");
 
             //var testRun = new ELTestRun();
             //testRun.Id = "test run 1";

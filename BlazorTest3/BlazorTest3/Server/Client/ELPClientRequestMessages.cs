@@ -49,6 +49,9 @@ namespace ELProxyClient
         public string Response { get; set; }
         public string MessageType { get; set; }
 
+        public string ClientMessageType { get; set; }
+        public string ClientMessageData { get; set; }
+
         public ELPClientResponseMessage() { }
 
         public ELPClientResponseMessage(string requestIndex, string apiKey)

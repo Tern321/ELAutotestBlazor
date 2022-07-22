@@ -1,9 +1,10 @@
 ﻿
+using BlazorTest3.Server.Controllers;
 using ELProxyClient;
 using Microsoft.AspNetCore.ResponseCompression;
 
 Model1.init();
-
+ModelTestClass.test();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

@@ -39,6 +39,19 @@ namespace ELProxyClient
 		}
 
 
+		public void sendSharedMessage(string Response, string ClientMessageType)
+		{
+			Console.WriteLine("sendSharedMessage");
+			//Console.WriteLine(message.Response);
+
+			ELPClientResponseMessage responseMessage = new ELPClientResponseMessage("", HttpApiKey);
+			responseMessage.MessageType = ELPRequestMessageType.sharedApiData;
+			responseMessage.Response = Response;
+			responseMessage.ApiKey = SharedApiKey;
+			responseMessage.ClientMessageType = ClientMessageType;
+
+			client.sendDataAsMessage(responseMessage.ToJson());
+		}
 	}
 
 }

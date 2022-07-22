@@ -139,6 +139,7 @@ namespace ELProxyClient
             handler.BeginReceive(state.buffer, 0, ELPStateObject.BufferSize, 0, new AsyncCallback(ReadCallback), state);
         }
 
+
         private void Send(Socket client, String data)
         {
             byte[] byteData = Encoding.ASCII.GetBytes(data);
