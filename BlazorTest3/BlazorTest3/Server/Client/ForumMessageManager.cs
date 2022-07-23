@@ -46,11 +46,7 @@ namespace ELProxyClient
         public override void gotSharedMessage(ELPClientResponseMessage message)
         {
 			Console.WriteLine("gotSharedMessage");
-			//base.gotSharedMessage(message);
-
-			//ELPClientResponseMessage message = System.Text.Json.JsonSerializer.Deserialize<ELPClientResponseMessage>(json);
 			TestScreenData testData = System.Text.Json.JsonSerializer.Deserialize<TestScreenData>(message.Response);
-			//Console.WriteLine(testData.deviceModel);
 			FileManager.saveStandardFile(testData.testName, testData.testCaseId, testData.deviceModel, testData.lang, testData.getScreenshot());
 
 		}

@@ -7,6 +7,7 @@ namespace BlazorTest3.Server.Model
     {
         public string testName { get; set; }
         public string testCaseId { get; set; }
+        public string testRunId { get; set; }
 
         public string viewControllerName { get; set; }
         public string rotation { get; set; }

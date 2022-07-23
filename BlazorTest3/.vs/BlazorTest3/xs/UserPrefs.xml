@@ -1,24 +1,18 @@
 ﻿<Properties StartupConfiguration="{CE0A4231-E91C-4C75-AA76-21D10ADF670F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BlazorTest3/Server/Client/ForumMessageManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BlazorTest3/Server/Client/ELPRequestClient.cs">
     <Files>
-      <File FileName="BlazorTest3/Server/Controllers/WeatherForecastController.cs" Line="25" Column="5" />
-      <File FileName="BlazorTest3/Client/Pages/FetchData.razor" Line="2" Column="1" />
-      <File FileName="BlazorTest3/Client/Pages/Index.razor" Line="9" Column="24" />
-      <File FileName="BlazorTest3/Server/Program.cs" Line="4" Column="37" />
-      <File FileName="BlazorTest3/Server/Controllers/TestController.cs" Line="24" Column="1" />
-      <File FileName="BlazorTest3/Server/Controllers/TestRunController.json" Line="12" Column="1" />
-      <File FileName="BlazorTest3/Client/App.razor" Line="14" Column="1" />
-      <File FileName="BlazorTest3/Client/Shared/MainLayout.razor" Line="1" Column="1" />
-      <File FileName="BlazorTest3/Client/Shared/NavMenu.razor" Line="28" Column="51" />
-      <File FileName="BlazorTest3/Client/_Imports.razor" Line="1" Column="1" />
-      <File FileName="BlazorTest3/Client/Program.cs" Line="13" Column="1" />
-      <File FileName="BlazorTest3/Client/Pages/Test.razor" Line="89" Column="45" />
-      <File FileName="BlazorTest3/Client/BlazorTest3.Client.csproj" Line="1" Column="1" />
-      <File FileName="BlazorTest3/Client/Shared/SurveyPrompt.razor" Line="1" Column="1" />
-      <File FileName="BlazorTest3/Client/Pages/Counter.razor" Line="14" Column="5" />
-      <File FileName="BlazorTest3/Shared/ELTest.cs" Line="18" Column="22" />
+      <File FileName="BlazorTest3/Server/Client/ELPClientRequestMessages.cs" Line="63" Column="9" />
+      <File FileName="BlazorTest3/Server/Controllers/TestRunController.json" Line="1" Column="1" />
+      <File FileName="BlazorTest3/Server/Model/TestScreenData.cs" Line="10" Column="46" />
+      <File FileName="BlazorTest3/Server/Model/ModelTestClass.cs" Line="16" Column="13" />
+      <File FileName="BlazorTest3/Server/Model/FileManager.cs" Line="35" Column="31" />
+      <File FileName="BlazorTest3/Server/Controllers/WeatherForecastController.cs" Line="34" Column="38" />
+      <File FileName="BlazorTest3/Server/Client/ForumMessageManager.cs" Line="49" Column="108" />
+      <File FileName="BlazorTest3/Server/Controllers/TestController.cs" Line="30" Column="1" />
+      <File FileName="BlazorTest3/Server/Client/ELPRequestClientMessageManager.cs" Line="42" Column="40" />
       <File FileName="BlazorTest3/Server/Client/ELProxyUtils.cs" Line="1" Column="1" />
-      <File FileName="BlazorTest3/Server/Client/ForumMessageManager.cs" Line="38" Column="4" />
+      <File FileName="BlazorTest3/Server/Client/ELPRequestClient.cs" Line="139" Column="1" />
+      <File FileName="BlazorTest3/Server/Model/Util.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,13 +24,11 @@
               <Node name="Shared" expanded="True" />
             </Node>
             <Node name="BlazorTest3.Server" expanded="True">
-              <Node name="Client" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="TestRunController.json" selected="True" />
+              <Node name="Client" expanded="True">
+                <Node name="ELPRequestClient.cs" selected="True" />
               </Node>
-              <Node name="model" expanded="True" />
-              <Node name="Pages" expanded="True" />
-              <Node name="Properties" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Model" expanded="True" />
             </Node>
             <Node name="BlazorTest3.Shared" expanded="True" />
           </Node>

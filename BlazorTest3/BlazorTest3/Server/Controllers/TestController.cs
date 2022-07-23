@@ -26,11 +26,19 @@ namespace BlazorTest3.Server.Controllers
             a.testCaseId = Util.unicFileName();
             
             Model1.messageManager.sendSharedMessage(a.ToJson(), "GetTestData");
+        }
 
-            //var testRun = new ELTestRun();
-            //testRun.Id = "test run 1";
-            //testRun.DeviceId = "123";
-            //return new ELTestRun[] { testRun };
+        [HttpGet("RunTestCase/{testName}")]
+        public void RunTestCase(string testName)
+        {
+            Console.WriteLine("CreateTestCase backend");
+            var a = new TestScreenData();
+            a.testName = testName;
+            a.testCaseId = Util.unicFileName();
+            a.testRunId = Util.unicFileName();
+            a.viewControllerModelJson = "";
+
+            Model1.messageManager.sendSharedMessage(a.ToJson(), "RunTestCase");
         }
 
 
